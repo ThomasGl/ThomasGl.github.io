@@ -1,19 +1,210 @@
-* {
-  margin:10px;
-  padding:10px;
-  color: #1670f0;
+body{
+    margin: 0;    padding: 0;
+    background: #190742;
+    background-size: contain;
+    overflow-x: hidden;
+    font-family: "Times New Roman", Times, serif;
 }
 
-#octocat {
-  display: block;
-  width:384px;
-  margin: 50px auto;
+.title{
+    position: relative;
+    top: 10%;   left: 45%;
+    color: #1779ff;    font-size: x-large;
+    display: none;
 }
 
-p {
-  display: block;
-  width: 400px;
-  margin: 50px auto;
-  font: 30px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
-  color: #1670f0;
+.typewrite{
+    color:#1779ff; text-decoration: none; font-size: x-large;
+    font-family: "Times New Roman", Times, serif; text-decoration: solid;
+    
+    position: absolute;    left: 0;
+    top: 5%;    width: 100%;
+    text-align: center;
+}
+
+.Tau{
+    position: relative;     display: block;
+    
+    top: 12%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    object-fit: initial;
+    
+    max-width: 278px;    max-height: 152px;
+    overflow: hidden;
+
+    margin-left: auto;
+    margin-right: auto;    
+}
+
+.MailIMG, .LinkedInIMG, .GitIMG{
+    top: 37%;
+    display: none;
+    position: absolute;
+    max-width: 120px;
+    max-height: 120px;
+    margin: 0 auto;
+}
+
+.MailIMG{
+    left: 70%;
+}
+.LinkedInIMG{
+    left: 46%;
+}
+.GitIMG{
+    left: 21%;
+}
+
+.MailButton, .LinkedInButton, .GithubButton{
+    position: absolute;
+    top: 66%;
+    transform: translate(-50%, -50%);
+    color: #1670f0;
+    padding: 30px 60px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+    overflow: hidden;
+    border-radius: 15px 25px;
+}
+
+.MailButton{
+    left: 75%;
+}
+.LinkedInButton{
+    left: 50%;
+}
+.GithubButton{
+    left: 25%;
+}
+
+.MailButton:before, .LinkedInButton:before, .GithubButton:before{
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(255,255,255,.05);
+}
+
+
+.MailButton span:nth-child(1),.LinkedInButton span:nth-child(1),.GithubButton span:nth-child(1){
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, #0c002b, #1779ff, #0c002b);
+    animation: animate1 2s linear infinite paused;
+}
+@keyframes animate1
+{
+    0%{
+        transform: translateX(-100%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+   
+
+.MailButton span:nth-child(2),.LinkedInButton span:nth-child(2),.GithubButton span:nth-child(2){
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, #0c002b, #1779ff, #0c002b);
+    animation: animate2 2s linear infinite paused;
+}
+@keyframes animate2
+{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}    
+
+
+.MailButton span:nth-child(3),.LinkedInButton span:nth-child(3),.GithubButton span:nth-child(3){
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to left, #0c002b, #1779ff, #0c002b);
+    animation: animate3 2s linear infinite paused;
+}
+@keyframes animate3
+{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}    
+
+
+.MailButton span:nth-child(4),.LinkedInButton span:nth-child(4),.GithubButton span:nth-child(4){
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to top, #0c002b, #1779ff, #0c002b);
+    animation: animate4 2s linear infinite paused;
+}
+@keyframes animate4
+{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}    
+
+
+.MailButton:hover span:nth-child(1), .MailButton:hover span:nth-child(2),
+.MailButton:hover span:nth-child(3), .MailButton:hover span:nth-child(4)
+{
+    animation-play-state: running;
+}
+
+
+.LinkedInButton:hover span:nth-child(1), .LinkedInButton:hover span:nth-child(2),
+.LinkedInButton:hover span:nth-child(3), .LinkedInButton:hover span:nth-child(4)
+{
+    animation-play-state: running;
+}
+
+.GithubButton:hover span:nth-child(1), .GithubButton:hover span:nth-child(2),
+.GithubButton:hover span:nth-child(3), .GithubButton:hover span:nth-child(4)
+{
+    animation-play-state: running;
+}
+
+@media (max-width: 1000px){
+    .Tau{
+        max-width: 210px;    max-height: 110px;
+    }
+
+    .GithubButton { 
+        top: 45%; left: 50%;
+    }
+
+    .LinkedInButton {
+        top: 65%; left: 50%;
+    }
+
+    .MailButton {
+        top: 85%; left: 50%;
+    }
 }
